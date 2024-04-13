@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "./Provider";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Moviestan",
-  description: "A movie data base",
+  title: "Moviesstan",
+  description: "Moviesstan is a movie database",
 };
 
 export default function RootLayout({
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Provider>
           <Navbar />
+          <Header />
           {children}
         </Provider>
       </body>

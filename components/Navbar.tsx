@@ -17,12 +17,14 @@ export default function Navbar() {
       </div>
       <div className="flex gap-5 items-center">
         <ThemeSelection />
-        <Link href={"/"} className="flex gap-2 items-center">
-          <span className="text-4xl font-extrabold bg-violet-500 py-2 px-4 rounded-2xl">
-            Moviestan
-          </span>
-          <span className="text-2xl hidden sm:inline-block">Database</span>
-        </Link>
+        <h1>
+          <Link href={"/"} className="flex gap-2 items-center">
+            <span className="text-4xl font-extrabold bg-violet-500 py-2 px-4 rounded-2xl">
+              Moviestan
+            </span>
+            <span className="text-2xl hidden sm:inline-block">Database</span>
+          </Link>
+        </h1>
       </div>
     </nav>
   );

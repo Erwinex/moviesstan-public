@@ -5,3 +5,8 @@ export type MenuItemProp = {
   address: string;
   Icon: IconType;
 };
+
+export type HeaderItemProps = {
+  lable: string;
+  param: string;
+};
