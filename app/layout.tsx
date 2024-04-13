@@ -9,7 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Moviesstan",
-  description: "Moviesstan is a movie database",
+  description:
+    "Moviesstan is a movie database an alternative for IMDb (don't take it seriously it's just a challenge for myself 🙃) that use TMDB movie and series database and help you to find the movie od series you want.",
 };
 
 export default function RootLayout({
