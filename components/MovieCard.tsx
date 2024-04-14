@@ -17,8 +17,8 @@ export default function MovieCard({
             "https://image.tmdb.org/t/p/original" +
               theResultMovie.poster_path || theResultMovie.backdrop_path
           }
-          width={625}
-          height={375}
+          width={1920}
+          height={2880}
           alt={`${
             theResultMovie.original_title ||
             theResultMovie.name ||
