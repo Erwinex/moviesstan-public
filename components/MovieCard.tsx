@@ -9,7 +9,7 @@ export default function MovieCard({
   theResultMovie: ResultMovies;
 }) {
   return (
-    <div className="cursor-pointer group sm:shadow-stone-400 sm:shadow-lg rounded-3xl sm:m-2 transition-all hover:scale-[1.07] duration-300">
+    <div className="cursor-pointer group sm:shadow-stone-400 sm:shadow-lg rounded-3xl sm:mx-2 transition-all hover:scale-[1.07] duration-300 my-3">
       <Link href={`/id/${theResultMovie.id}`}>
         <Image
           className="sm:rounded-t-3xl group-hover:opacity-65 transition-all duration-300"
