@@ -1,13 +1,12 @@
 import { ResultMoviesProps } from "@/types";
+import MovieCard from "./MovieCard";
 
 export default function ResultMovies({ results }: ResultMoviesProps) {
   return (
-    <main>
+    <section className="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 max-w-7xl mx-auto py-6">
       {results.map((result) => (
-        <div key={result.id}>
-          <h3>{result.original_title}</h3>
-        </div>
+        <MovieCard key={result.id} theResultMovie={result} />
       ))}
-    </main>
+    </section>
   );
 }
