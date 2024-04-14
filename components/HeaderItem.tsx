@@ -11,10 +11,7 @@ export default function HeaderItem({ lable, param }: HeaderItemProps) {
     <h2>
       <Link
         className={`hover:text-blue-400 p-5 rounded-full ${
-          show === param ||
-          (sreachParams.get("show") === null && param === "fetchTrending")
-            ? "dark:bg-slate-600 bg-slate-200 "
-            : ""
+          show === param ? "dark:bg-slate-600 bg-slate-200 " : ""
         }`}
         href={"/?show=" + param}
       >
