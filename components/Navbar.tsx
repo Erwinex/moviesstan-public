@@ -22,7 +22,7 @@ export default function Navbar() {
             <span className="text-4xl font-extrabold bg-violet-500 py-2 px-4 rounded-2xl">
               Moviesstan
             </span>
-            <span className="text-2xl hidden sm:inline-block">Database</span>
+            <span className="text-2xl hidden md:inline-block">Database</span>
           </Link>
         </h1>
       </div>
