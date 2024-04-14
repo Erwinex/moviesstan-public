@@ -24,7 +24,7 @@ export default async function Home({
   const data = await res.json();
   const results = data.results;
   return (
-    <div>
+    <div className="px-8">
       <ResultMovies results={results} />
     </div>
   );
