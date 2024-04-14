@@ -6,7 +6,7 @@ import ThemeSelection from "./ThemeSelection";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between gap-32 items-center py-1 px-2 max-w-7xl mx-auto">
+    <nav className="flex justify-between items-center py-1 px-2 max-w-7xl mx-auto">
       <div className="flex gap-5">
         <MenuItem lable="Home page" address="/" Icon={AiFillHome} />
         <MenuItem
