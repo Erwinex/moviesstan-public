@@ -5,7 +5,7 @@ export default function ResultMovies({ results }: ResultMoviesProps) {
     <main>
       {results.map((result) => (
         <div key={result.id}>
-          <h3>{result.title}</h3>
+          <h3>{result.original_title}</h3>
         </div>
       ))}
     </main>
