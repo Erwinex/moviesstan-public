@@ -19,7 +19,7 @@ export default async function MoviePage({ params }: MoviePageProp) {
     <div className="w-full">
       <div className="p-6 md:pt-10 flex flex-col lg:flex-row max-w-7xl content-center lg:space-x-10 mx-auto">
         <Image
-          className="rounded-3xl"
+          className="rounded-3xl mx-auto"
           src={
             // "/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
             "https://image.tmdb.org/t/p/original" + movie.poster_path ||
