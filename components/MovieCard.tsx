@@ -14,24 +14,27 @@ export default function MovieCard({
         <Image
           className="sm:rounded-t-3xl group-hover:opacity-65 transition-all duration-300"
           src={
+            //"/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
             "https://image.tmdb.org/t/p/original" +
               theResultMovie.poster_path || theResultMovie.backdrop_path
           }
           width={1920}
           height={2880}
           alt={`${
-            theResultMovie.original_title ||
+            theResultMovie.title ||
             theResultMovie.name ||
+            theResultMovie.original_title ||
             theResultMovie.original_title
           } poster`}
         />
-        <div className="px-2 py-6 sm:py-3 group-hover:p-8 sm:group-hover:p-2 transition-all duration-300">
+        <div className="px-2 py-6 sm:py-3 group-hover:p-8 sm:group-hover:p-2 transition-all duration-300  font-sans">
           <h3 className="font-extrabold text-lg">
-            {theResultMovie.original_title ||
+            {theResultMovie.title ||
               theResultMovie.name ||
+              theResultMovie.original_title ||
               theResultMovie.original_title}
           </h3>
-          <p className="line-clamp-3 text-md border-y-2">
+          <p className="line-clamp-3 text-md border-y-2 font-mono">
             {theResultMovie.overview}
           </p>
           <p className="flex items-center pt-2">
@@ -39,7 +42,7 @@ export default function MovieCard({
               {theResultMovie.release_date || theResultMovie.first_air_date}
             </span>
             <MdThumbsUpDown className="h-6 ml-4 mr-2" />
-            <span>{theResultMovie.vote_count}</span>
+            <span>{theResultMovie.vote_average.toString().slice(0, 3)}</span>
           </p>
         </div>
       </Link>
