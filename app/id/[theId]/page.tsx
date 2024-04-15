@@ -31,7 +31,7 @@ export default async function MoviePage({ params }: MoviePageProp) {
             movie.title || movie.original_title || movie.original_title
           } poster`}
         />
-        <div className="p-4 max-w-[480px] lg:max-w-full font-sans">
+        <div className="p-4 max-w-[480px] lg:max-w-full font-sans mx-auto">
           <h3 className="text-3xl mb-10 font-semibold">
             {movie.title || movie.original_title || movie.original_title}
           </h3>
