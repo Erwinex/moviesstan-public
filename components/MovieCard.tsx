@@ -1,6 +1,7 @@
 import { ResultMovies } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Container } from "postcss";
 import { MdThumbsUpDown } from "react-icons/md";
 
 export default function MovieCard({
@@ -14,7 +15,7 @@ export default function MovieCard({
         <Image
           className="sm:rounded-t-3xl group-hover:opacity-65 transition-all duration-300"
           src={
-            //"/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
+            // "/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
             "https://image.tmdb.org/t/p/original" +
               theResultMovie.poster_path || theResultMovie.backdrop_path
           }
@@ -27,14 +28,14 @@ export default function MovieCard({
             theResultMovie.original_title
           } poster`}
         />
-        <div className="px-2 py-6 sm:py-3 group-hover:p-8 sm:group-hover:p-2 transition-all duration-300  font-sans">
+        <div className="divide-y-2 px-2 py-6 sm:py-3 group-hover:p-8 sm:group-hover:p-2 transition-all duration-300  font-sans">
           <h3 className="font-extrabold text-lg">
             {theResultMovie.title ||
               theResultMovie.name ||
               theResultMovie.original_title ||
               theResultMovie.original_title}
           </h3>
-          <p className="line-clamp-3 text-md border-y-2 font-mono">
+          <p className="line-clamp-3 text-md font-mono">
             {theResultMovie.overview}
           </p>
           <p className="flex items-center pt-2">
