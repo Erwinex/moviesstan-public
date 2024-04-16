@@ -7,7 +7,7 @@ export default async function MoviePage({ params }: MoviePageProp) {
   const id = params.theId;
 
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}}?api_key=${API_KEY}&language=en-US`,
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`,
     { next: { revalidate: 43600 } }
   );
   if (!res.ok) {
@@ -17,21 +17,23 @@ export default async function MoviePage({ params }: MoviePageProp) {
   const movie: MovieDetails = await res.json();
   return (
     <div className="w-full">
-      <div className="p-6 md:pt-10 flex flex-col lg:flex-row max-w-7xl content-center lg:space-x-10 mx-auto">
-        <Image
-          className="rounded-3xl mx-auto"
-          src={
-            // "/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
-            "https://image.tmdb.org/t/p/original" + movie.poster_path ||
-            movie.backdrop_path
-          }
-          width={1920 / 4}
-          height={2880 / 4}
-          alt={`${
-            movie.title || movie.original_title || movie.original_title
-          } poster`}
-        />
-        <div className="p-4 max-w-[480px] lg:max-w-full font-sans mx-auto">
+      <div className="p-6 md:pt-10 flex flex-col lg:flex-row max-w-7xl content-start lg:space-x-10 mx-auto">
+        <div className="h-full max-w-full border-8 dark:border-sky-100 border-stone-700  rounded-3xl ">
+          <Image
+            className=" rounded-xl mx-auto w-full h-full"
+            src={
+              // "/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
+              "https://image.tmdb.org/t/p/original" + movie.poster_path ||
+              movie.backdrop_path
+            }
+            width={1920}
+            height={2880}
+            alt={`${
+              movie.title || movie.original_title || movie.original_title
+            } poster`}
+          />
+        </div>
+        <div className="p-8 max-w-[480px] lg:max-w-full font-sans">
           <h3 className="text-3xl mb-10 font-semibold">
             {movie.title || movie.original_title || movie.original_title}
           </h3>
