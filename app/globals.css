@@ -22,12 +22,14 @@
   --scrollbar-track-color: #f3def5;
   --scrollbar-thumb-color: #ad55d8;
   --scrollbar-thumb-hover-color: #70437f;
+  --animated-border-color: black;
 }
 
 .dark {
   --scrollbar-track-color: #3c274e;
   --scrollbar-thumb-color: #bc82c4;
   --scrollbar-thumb-hover-color: #96529b;
+  --animated-border-color: white;
 }
 
 ::-webkit-scrollbar {
@@ -46,4 +48,68 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover-color);
+}
+
+input {
+  all: unset;
+}
+
+.search-box {
+  --offset: 3px;
+  position: relative;
+  /* height: 75px;
+  width: 400px;
+  border-radius: 50px;
+  
+  background: rgb(55, 21, 90); */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Conic gradient */
+.search-box::before {
+  content: "";
+  background: conic-gradient(
+    transparent 270deg,
+    var(--animated-border-color),
+    transparent
+  );
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 2s linear infinite;
+}
+
+/* Overlay */
+.search-box::after {
+  content: "";
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  height: calc(100% - 2 * var(--offset));
+  width: calc(100% - 2 * var(--offset));
+}
+
+.search-box input {
+  background: transparent;
+  /* color: white; */
+  font-size: 1.5rem;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  padding: 1.5rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+  }
 }

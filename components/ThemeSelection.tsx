@@ -9,7 +9,7 @@ export default function ThemeSelection() {
     mounted && (
       <div>
         <select
-          className="rounded-full cursor-pointer inline-block sm:hidden border-2 border-slate-400"
+          className="rounded-full cursor-pointer inline-block md:hidden border-2 border-slate-400"
           value={theme}
           onChange={(e) => setTheme(e.target.value)}
         >
@@ -18,7 +18,7 @@ export default function ThemeSelection() {
           <option value="light">&#127765;</option>
         </select>
         <select
-          className="rounded-md cursor-pointer hidden sm:inline-block border-2 border-slate-700"
+          className="rounded-md cursor-pointer hidden md:inline-block border-2 border-slate-700"
           value={theme}
           onChange={(e) => setTheme(e.target.value)}
         >
