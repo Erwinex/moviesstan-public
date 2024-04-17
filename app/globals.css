@@ -2,22 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @property --scrollbar-track-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #f3def5;
-}
-@property --scrollbar-thumb-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #ad55d8;
-}
-@property --scrollbar-thumb-hover-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #70437f;
-} */
-
+/* defiining golobal variables for dark and light themes */
 :root {
   --scrollbar-track-color: #f3def5;
   --scrollbar-thumb-color: #ad55d8;
@@ -32,6 +17,7 @@
   --animated-border-color: white;
 }
 
+/* styling scroll bar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -50,6 +36,7 @@
   background: var(--scrollbar-thumb-hover-color);
 }
 
+/* costum animated searchbar */
 input {
   all: unset;
 }
@@ -57,11 +44,6 @@ input {
 .search-box {
   --offset: 3px;
   position: relative;
-  /* height: 75px;
-  width: 400px;
-  border-radius: 50px;
-  
-  background: rgb(55, 21, 90); */
   max-width: 100%;
   overflow: hidden;
 }
@@ -96,8 +78,6 @@ input {
 
 .search-box input {
   background: transparent;
-  /* color: white; */
-  font-size: 1.5rem;
   position: absolute;
   inset: 0;
   z-index: 10;
