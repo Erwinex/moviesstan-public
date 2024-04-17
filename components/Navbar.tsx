@@ -1,15 +1,26 @@
-import { CiCircleInfo, CiHome } from "react-icons/ci";
 import MenuItem from "./MenuItem";
 import Link from "next/link";
 import ThemeSelection from "./ThemeSelection";
 import Searchbox from "./Searchbox";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default function Navbar() {
   return (
     <nav className="flex justify-between items-center py-1 px-2 w-full bg-violet-100 dark:bg-slate-800">
-      <div className="flex gap-5">
-        <MenuItem lable="Home page" address="/" Icon={CiHome} />
-        <MenuItem lable="About us" address="/about" Icon={CiCircleInfo} />
+      <div>
+        <HamburgerMenu />
+        <div className="hidden md:flex gap-5">
+          <MenuItem
+            lable="Home page"
+            address="/"
+            variant="hidden md:inline-block"
+          />
+          <MenuItem
+            lable="About us"
+            address="/about"
+            variant="hidden md:inline-block"
+          />
+        </div>
       </div>
       <div>
         <Searchbox />

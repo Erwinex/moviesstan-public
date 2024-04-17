@@ -1,5 +1,6 @@
 import ResultMovies from "@/components/ResultMovies";
 import { SearchParams } from "@/types";
+import Image from "next/image";
 
 const API_KEY = process.env.TMDB_API_KEY;
 export default async function SearchResult({
@@ -17,10 +18,25 @@ export default async function SearchResult({
 
   const data = await res.json();
   const results = data.results;
-  console.log(results);
+  const isResultEmpty = results.length === 0;
+  console.log(isResultEmpty);
   return (
     <div className="px-8">
-      <ResultMovies results={results} />
+      {isResultEmpty || <ResultMovies results={results} />}
+      {isResultEmpty && (
+        <div className="flex flex-col items-center mt-14 pb-10">
+          <Image
+            className="mx-auto motion-safe:animate-bounce"
+            src="/broken-film.svg"
+            alt="broken icon"
+            width={200}
+            height={250}
+          />
+          <h3 className="text-4xl">
+            We could not find any movie with this title !
+          </h3>{" "}
+        </div>
+      )}
     </div>
   );
 }
