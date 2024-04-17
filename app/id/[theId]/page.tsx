@@ -17,7 +17,7 @@ export default async function MoviePage({ params }: MoviePageProp) {
   const movie: MovieDetails = await res.json();
   return (
     <div className="w-full">
-      <div className="p-6 md:pt-10 flex flex-col lg:flex-row max-w-7xl content-start lg:space-x-10 mx-auto">
+      <div className="p-6 md:pt-10 flex flex-col lg:flex-row container content-center lg:space-x-10 mx-auto">
         <div className="h-full max-w-full border-8 dark:border-sky-100 border-stone-700  rounded-3xl ">
           <Image
             className=" rounded-xl mx-auto w-full h-full"

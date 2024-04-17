@@ -47,6 +47,9 @@ export type ResultMovies = {
 export type MoviePageParams = {
   theId: number | string;
 };
+export type SearchParams = {
+  searchParam: number | string;
+};
 export type MoviePageProp = {
   params: MoviePageParams;
 };
