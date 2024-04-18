@@ -1,15 +1,19 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import { CiSearch } from "react-icons/ci";
 
 export default function Searchbox() {
-  const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
   function submitHandeler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const searchValue = formData.get("search");
+    if (!searchValue) return;
     router.push("/search/" + searchValue);
   }
+  console.log("render");
   return (
     <div className=" ">
       <form
@@ -21,19 +25,16 @@ export default function Searchbox() {
             className="text-black dark:text-white"
             type="text"
             placeholder="Search"
-            value={searchValue}
-            onChange={(e: React.FormEvent<HTMLInputElement>) => {
-              setSearchValue(e.currentTarget.value);
-            }}
+            name="search"
           />
         </div>
 
         <button
           type="submit"
-          disabled={searchValue === ""}
-          className="my-auto disabled:bg-slate-400 disabled:text-gray-200 dark:disabled:bg-slate-400 dark:disabled:text-gray-200 disabled:cursor-not-allowed text-gray-900 bg-[inherit] border border-gray-300 focus:outline-none hover:bg-violet-100 focus:ring-4 focus:ring-gray-400 font-medium rounded-full text-md px-5 py-2.5 me-2 dark:bg-[inherit] dark:text-white dark:border-gray-600 dark:hover:bg-violet-500 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="my-auto text-gray-900 bg-[inherit] border border-gray-300 focus:outline-none hover:bg-violet-300 focus:ring-4 focus:ring-gray-400 font-medium rounded-full px-5 py-2.5 me-2 dark:bg-[inherit] dark:text-white dark:border-gray-600 dark:hover:bg-violet-500 dark:hover:border-gray-600 dark:focus:ring-gray-700"
         >
-          Search
+          <CiSearch className="inline-block md:hidden" />
+          <span className="hidden md:inline-block">Search</span>
         </button>
       </form>
     </div>
