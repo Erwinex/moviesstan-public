@@ -13,7 +13,6 @@ export default function Searchbox() {
     if (!searchValue) return;
     router.push("/search/" + searchValue);
   }
-  console.log("render");
   return (
     <div className=" ">
       <form

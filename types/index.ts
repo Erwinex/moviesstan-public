@@ -112,3 +112,12 @@ export type Belongstocollection = {
   poster_path: string;
   backdrop_path: string;
 };
+
+export type SliderProp = {
+  suggestions: {
+    id: number;
+    title: string;
+    movieId: string;
+    image: string;
+  }[];
+};
