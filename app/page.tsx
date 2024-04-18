@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import ResultMovies from "@/components/ResultMovies";
 import { HomePageProp } from "@/types";
 import Image from "next/image";
@@ -19,8 +20,9 @@ export default async function Home({ searchParams }: HomePageProp) {
   const data = await res.json();
   const results = data.results;
   return (
-    <div className="px-8">
+    <>
+      <Header />
       <ResultMovies results={results} />
-    </div>
+    </>
   );
 }
