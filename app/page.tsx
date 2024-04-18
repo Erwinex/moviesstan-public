@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import ResultMovies from "@/components/ResultMovies";
+import SwiperSliderHomePage from "@/components/SwiperSliderHomePage";
 import { HomePageProp } from "@/types";
-import Image from "next/image";
 
 const API_KEY = process.env.TMDB_API_KEY;
 
@@ -13,16 +13,23 @@ export default async function Home({ searchParams }: HomePageProp) {
     }?api_key=${API_KEY}&language=en-US&page=1`,
     { next: { revalidate: 43600 } }
   );
-  if (!res.ok) {
+  const resSuggestions = await fetch(
+    "https://erwinex.github.io/fake-api/db.json",
+    { next: { revalidate: 43600 } }
+  );
+
+  if (!res.ok || !resSuggestions.ok) {
     throw new Error("Failed to fetch data");
   }
 
   const data = await res.json();
+  const dataSuggestions = await resSuggestions.json();
   const results = data.results;
   return (
-    <>
+    <div>
+      <SwiperSliderHomePage suggestions={dataSuggestions} />
       <Header />
       <ResultMovies results={results} />
-    </>
+    </div>
   );
 }
