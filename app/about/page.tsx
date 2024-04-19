@@ -3,7 +3,7 @@ export default function AboutUs() {
   return (
     <div className="container mx-auto text-3xl">
       <h3>
-        This is an alternative to TMDB using it&aposs own api :) and just a
+        This is an alternative to TMDB using it&apos;s own api :) and just a
         challenge for my self.
       </h3>
       <h3 className="mt-8">I hope you like and enjoy it :)</h3>
