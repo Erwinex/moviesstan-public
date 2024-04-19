@@ -48,7 +48,7 @@ export default function SwiperSliderHomePage({ suggestions }: SliderProp) {
         }}
         navigation={true}
         modules={[Pagination, Navigation, Autoplay, EffectCoverflow]}
-        className="w-full my-10 h-96"
+        className="w-full my-10 h-64 sm:h-96"
       >
         {suggestions.map((suggestion) => (
           <SwiperSlide key={suggestion.id}>
