@@ -7,7 +7,7 @@ export default function AboutUs() {
         challenge for my self.
       </h3>
       <h3 className="mt-8">I hope you like and enjoy it :)</h3>
-      <main className="text-lg mt-5">
+      <main className="text-lg my-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo autem
         rerum magni maiores saepe obcaecati molestiae reprehenderit fuga
         doloribus itaque inventore suscipit nemo iste, sapiente excepturi in
@@ -16,6 +16,14 @@ export default function AboutUs() {
         aliquid, ipsa porro odio debitis odit labore esse exercitationem et hic.
         Reiciendis repellendus expedita velit!
       </main>
+
+      <a
+        href="https://github.com/Erwinex/moviesstan-public"
+        className="hover:text-violet-500"
+        target="_blank"
+      >
+        Source Code on Github
+      </a>
     </div>
   );
 }
