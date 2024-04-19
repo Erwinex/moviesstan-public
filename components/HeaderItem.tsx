@@ -1,9 +1,10 @@
 "use client";
 
-import { HeaderItemProps } from "@/types";
+import { type HeaderItemProps } from "@/types";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+// This component provide hearder items
 export default function HeaderItem({ lable, param }: HeaderItemProps) {
   const sreachParams = useSearchParams();
   const show = sreachParams.get("show");

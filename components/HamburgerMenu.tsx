@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import MenuItem from "./MenuItem";
 
+// This is a hamburge menu show on meduim devices
 export default function HamburgerMenu() {
   const [showMenu, setShowMenu] = useState(false);
   return (

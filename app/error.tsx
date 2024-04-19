@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect } from "react";
 
+// Error component, to be shown when an error happens while loading the page
 export default function Error({
   error,
   reset,

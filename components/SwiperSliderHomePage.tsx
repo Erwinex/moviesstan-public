@@ -15,6 +15,7 @@ import Link from "next/link";
 import { type SliderProp } from "@/types";
 import Image from "next/image";
 
+// This componenet provide a slider using Swiper library
 export default function SwiperSliderHomePage({ suggestions }: SliderProp) {
   return (
     <div>

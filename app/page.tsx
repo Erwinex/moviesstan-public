@@ -5,8 +5,10 @@ import { HomePageProp } from "@/types";
 
 const API_KEY = process.env.TMDB_API_KEY;
 
+// This is the home page
 export default async function Home({ searchParams }: HomePageProp) {
   const show = searchParams.show || "fetchTrending";
+  // fetching data from TMDB API
   const res = await fetch(
     `https://api.themoviedb.org/3/${
       show === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
