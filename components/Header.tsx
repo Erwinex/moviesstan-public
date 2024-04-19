@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import HeaderItem from "./HeaderItem";
 
+// This component provide the hearder in the home page
 export default function Header() {
   return (
     <header className="flex p-6 lg:text-xl md:text-lg dark:bg-violet-800 bg-violet-300 font-bold items-center sm:justify-center sm:gap-32 justify-between gap-0">

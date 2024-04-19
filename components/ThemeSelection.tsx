@@ -1,10 +1,13 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+
+// This is a component that allows the user to select a theme from a dropdown menu.
 export default function ThemeSelection() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMouted] = useState(false);
-  useEffect(() => setMouted(true), []);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
     mounted && (
       <div>

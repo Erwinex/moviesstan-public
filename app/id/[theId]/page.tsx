@@ -3,9 +3,10 @@ import Image from "next/image";
 
 const API_KEY = process.env.TMDB_API_KEY;
 
+// This is each movie page
 export default async function MoviePage({ params }: MoviePageProp) {
   const id = params.theId;
-
+  // fetching movie details from TMDB API
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`,
     { next: { revalidate: 43600 } }
@@ -22,7 +23,6 @@ export default async function MoviePage({ params }: MoviePageProp) {
           <Image
             className=" rounded-xl mx-auto w-full h-full"
             src={
-              // "/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
               "https://image.tmdb.org/t/p/original" + movie.poster_path ||
               movie.backdrop_path
             }

@@ -3,12 +3,15 @@ import { SearchParams } from "@/types";
 import Image from "next/image";
 
 const API_KEY = process.env.TMDB_API_KEY;
+
+// This is the search page
 export default async function SearchResult({
   params,
 }: {
   params: SearchParams;
 }) {
   const searchParam = params.searchParam;
+  // fetching data from TMDB API to seach for given key word from the search box
   const res = await fetch(
     `https://api.themoviedb.org/3/search/movie?query=${searchParam}&api_key=${API_KEY}`
   );

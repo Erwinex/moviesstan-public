@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+// This is a uniqe loading efect that display for this root "/search" and "/search/*"
 export default function loading() {
   return (
     <div className="flex justify-center items-center mt-20">

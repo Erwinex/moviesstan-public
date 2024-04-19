@@ -1,7 +1,6 @@
-import { ResultMovies } from "@/types";
+import { type ResultMovies } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { Container } from "postcss";
 import { MdThumbsUpDown } from "react-icons/md";
 
 export default function MovieCard({
@@ -15,7 +14,6 @@ export default function MovieCard({
         <Image
           className="sm:rounded-t-3xl group-hover:opacity-65 transition-all duration-300"
           src={
-            // "/1THOJsxIj3fqfYewAgIYZp7BfjG.webp"
             "https://image.tmdb.org/t/p/original" +
               theResultMovie.poster_path || theResultMovie.backdrop_path
           }
@@ -42,6 +40,7 @@ export default function MovieCard({
             <span className="border-r-2 border-stone-200 pr-2">
               {theResultMovie.release_date || theResultMovie.first_air_date}
             </span>
+            {/* This is a Thumb up and Thumb down icon to show the ratings*/}
             <MdThumbsUpDown className="h-6 ml-4 mr-2" />
             <span>{theResultMovie.vote_average.toString().slice(0, 3)}</span>
           </p>
