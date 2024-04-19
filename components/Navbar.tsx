@@ -7,7 +7,7 @@ import HamburgerMenu from "./HamburgerMenu";
 // That is the navigation bar in the layout
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center py-1 px-2 w-full bg-violet-100 dark:bg-slate-800">
+    <nav className="flex justify-between items-center py-1 px-2 w-full bg-violet-100 dark:bg-slate-800 sticky top-0 left-0 z-50">
       <div>
         <HamburgerMenu />
         <div className="hidden md:flex gap-5">
