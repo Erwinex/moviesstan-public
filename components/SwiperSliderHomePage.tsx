@@ -61,7 +61,7 @@ export default function SwiperSliderHomePage({ suggestions }: SliderProp) {
                 fill
                 alt={suggestion.title + "'s image"}
               />
-              <p className="w-full z-50 absolute bottom-0 left-0 p-8 dark:bg-slate-500 bg-violet-300 bg-opacity-50 dark:bg-opacity-50">
+              <p className="w-full z-50 absolute bottom-0 left-0 p-8 dark:bg-slate-500 bg-violet-300 bg-opacity-50 dark:bg-opacity-50 scale-y-0 origin-bottom group-hover:scale-y-100 transition-all duration-500">
                 {suggestion.title}
               </p>
             </Link>
