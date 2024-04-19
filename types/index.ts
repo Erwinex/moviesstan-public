@@ -121,9 +121,3 @@ export type SliderProp = {
     image: string;
   }[];
 };
-
-export type PagginationProp = {
-  onPerv(): void;
-  onFirst(): void;
-  onNext(): void;
-};
